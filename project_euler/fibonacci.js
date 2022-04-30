@@ -35,4 +35,4 @@ while (term2 < 4000000) {
 console.log(sum);
 
 console.log();
-console.log(fibonacci(4000000))
+console.log(fibonacci(4000000));
