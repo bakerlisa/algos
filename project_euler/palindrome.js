@@ -24,21 +24,15 @@ findPalindrome = (start,end) =>{
 }
 //console.log(findPalindrome(999,999));
 
-findPalindromeTwo = () => {
-    let ans = 0;
-    console.log("num");
-    for(let i=999;i >=100; i--){
-        for(let j=99;j>=100;j--){
-            var num = i*j;
-            
-            var s = String(num);
-            var rs = s.split('').reverse.join();
-            if(s === rs){
-                console.log(ans = Math.max(ans,num));
-            }
-
+let ans = 0;
+for (let i = 999; i >= 100; i --) {
+    for (let j = 999; j >= 100; j --) {
+        var num = i * j;
+        let s = String(num);
+        let rs = s.split('').reverse().join('');
+        if (s === rs) {
+            ans = Math.max(ans, num);
         }
     }
 }
-
-findPalindromeTwo();
+console.log(ans);
