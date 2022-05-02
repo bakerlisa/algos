@@ -2,5 +2,17 @@
 
 // What is the largest prime factor of the number 600851475143 ?
 
-var half = Math.floor(Math.sqrt(600851475143));
-console.log(half);
+findLargestPrime = (num) => { 
+    var div = 2;
+    while(num > 1){
+        if(num % div === 0){
+            num /= div;
+        }else{
+            div++;
+        }
+    }
+    console.log(div);
+}
+
+
+findLargestPrime(600851475143);
