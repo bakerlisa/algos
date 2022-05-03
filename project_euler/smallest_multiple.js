@@ -11,14 +11,16 @@ multiple = () => {
             var div = smallest / i;
             var result = (div - Math.floor(div)) !== 0; 
             var isDividable = true;
+
             if(result){
-                smallest+=10;
                 isDividable = false;
+                smallest+=2520;
+                console.log(smallest);
                 break;
             }
-            if (isDividable) {
-                found = true;
-            }
+        }
+        if (isDividable) {
+            found = true;
         }
     }
 
