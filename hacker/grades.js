@@ -13,7 +13,6 @@ function gradingStudents(grades) {
                 }  
             }else {
                 let numCheckTwo = numSt.charAt(0) + "5";
-                console.log(numCheckTwo)
                 if(parseInt(grades[x]) + 3 > parseInt(numCheckTwo)){
                     grades[x] = parseInt(numCheckTwo);
                 }
@@ -22,4 +21,4 @@ function gradingStudents(grades) {
     }
     return grades;
 }
-console.log(gradingStudents([73, 67, 38, 33,53,94,16,2,99,57,53,70]));
+console.log(gradingStudents([73, 67, 38, 33,53,94,16,2,99,57,53,70,53]));
