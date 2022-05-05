@@ -1,22 +1,28 @@
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
     // Write your code here
-    var fruitCount = [0,0];
+    var apple = 0;
+    var orange = 0;
     
     for(var i=0;i<apples.length;i++){
         apples[i] = apples[i] + a; 
+        
         if(apples[i] >= s && apples[i] <= t){
-            fruitCount[0] += 1;
-        }   
+            apple++;
+        }  
+        
     }
 
     for(var j=0;j<oranges.length;j++){
         oranges[j] = oranges[j] + b;
-        if(oranges[j] >= a && oranges[j] <= b){
-            fruitCount[1]++
+        console.log( oranges[j])
+        if(oranges[j] >= s && oranges[j] <= t){
+            orange++;
         } 
     }
-
-    return apples;
+    console.log(apple);
+    console.log(orange);
 }
 
-countApplesAndOranges(7,10,4,12,[2,3,-4],[3,-2,-4]);
+countApplesAndOranges(2,3,1,5,[-2],[-1]);
+
+
