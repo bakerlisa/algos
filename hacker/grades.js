@@ -2,12 +2,14 @@ function gradingStudents(grades) {
     // Write your code here'
     for(let x=0;x<grades.length;x++){
         let numSt = grades[x].toString();
-        if(grades[x] >= 100||  (grades[x] <= 33 && grades[x] >= 0 )){
+        if(grades[x] >= 100||  (grades[x] < 38 && grades[x] >= 0 )){
             continue;
         }else{
             if(parseInt(numSt.charAt(1)) > 5 ){
                 let increase = parseInt(numSt.charAt(0)) + 1;
                 let numCheck =  increase.toString() + "0";
+                console.log(grades[x] + 3)
+                console.log(parseInt(numCheck))
                 if(grades[x] + 3 >  parseInt(numCheck)){
                     grades[x] = parseInt(numCheck);
                 }  
