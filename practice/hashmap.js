@@ -12,3 +12,5 @@ contacts.set('Gus', new Contact("Gus Gus", 2, null));
 contacts.set('Natalie', new Contact("Natalie Baker", 10, '444-555-6666'));
 
 console.log(contacts.get("Lisa").number);
+
+// ================ TAKE TWO ================
