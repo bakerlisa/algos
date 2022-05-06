@@ -1,7 +1,47 @@
-wordLadder = () =>{
-    var end = "warm";
-    var word_list = ["cold", "gold","cord","sold","card","ward","warm","tard"];
-    var pervious = "cold";
+// wordLadder = () =>{
+//     var end = "warm";
+//     var word_list = ["cold", "gold","cord","sold","card","ward","warm","tard"];
+//     var pervious = "cold";
+//     var count = 0;
+//     var notIn = "";
+//     var chain = [];
+
+//     const item = new Set(end.split(""));
+
+//     for(var i=1; i < word_list.length;i++){
+//         if(word_list[i] === end){
+//             break;
+//         }else{
+//             let word = new Set(word_list[i].split(""));
+//             pervious = pervious.split("");
+
+//             for(var k=0;k<pervious.length;k++){
+//                 if(word.has(pervious[k])){
+//                     count++;
+//                 }else{
+//                     notIn = pervious[k];
+//                 }
+//             }
+//             if(count <= 3){
+//                 if(!item.has(notIn)){
+//                     chain.push(word_list[i]);
+//                 }              
+//             }
+//         }
+//         count = 0;
+//         pervious = word_list[i];
+//     }
+//     console.log(chain);
+//     return chain.length;
+// }
+// console.log(wordLadder());
+
+/////////
+function wordLadder(begin, end, wordList) {
+
+    var end = end;
+    var word_list = wordList;
+    var pervious = begin;
     var count = 0;
     var notIn = "";
     var chain = [];
@@ -31,10 +71,10 @@ wordLadder = () =>{
         count = 0;
         pervious = word_list[i];
     }
-    console.log(chain);
     return chain.length;
 }
-console.log(wordLadder());
+
+console.log(wordLadder("cold","warm",["cold", "gold","cord","sold","card","ward","warm","tard"]));
 
 
 // for(var j=0;j<word.length;j++){
