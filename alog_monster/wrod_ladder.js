@@ -48,25 +48,33 @@
 function wordLadder(begin, end, wordList) {
     var pervious = begin;
     var count = 0;
+    var counter = 0;
     var chain = [begin];
+    var k = 1;
 
     const item = new Set(end.split(""));
 
-    while(wordList[i] === end){
-        let word = wordList[i].split("");
+    while(counter < wordList.length){
+        let word = new Set(wordList[counter].split(""));
         pervious = pervious.split("");
 
-        for(var k=0;k<pervious.length;k++){
-            if(word[k] === pervious[k]){
+        for(var k=1;k<pervious.length;k++){
+            if(word.has(pervious[k]) ){
+                console.log(word);
+                console.log(pervious);
+                console.log();
                 count++;
             }
         }
-        if(count === end-1){ 
-            chain.push(wordList[i]);
+
+        if(count >= end-1){ 
+            chain.push(wordList[k]);
         }
+        counter++;
+        count = 0;
+        pervious = wordList[k];
     }
-    count = 0;
-    pervious = wordList[i];
+    // console.log(chain);
     return chain.length;
 }
 
