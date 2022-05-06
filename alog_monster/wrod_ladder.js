@@ -22,11 +22,13 @@ wordLadder = () =>{
                     notIn = pervious[k];
                 }
             }
-
             if(count <= 3){
-                console.log(notIn);                
+                if(!item.has(notIn)){
+                    chain.push(word_list[i]);
+                }              
             }
         }
+        count = 0;
         pervious = word_list[i];
     }
     console.log(chain);
