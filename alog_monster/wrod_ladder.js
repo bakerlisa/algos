@@ -81,35 +81,47 @@
 ///// THREE
 function wordLadder(begin, end, wordList) {
     var pervious = begin;
-    var runner = 1;
-    var runnerTwo = 0;
-    var chain = [begin];
     var count = 0;
+    var runner = 1;
     
-    while(runnerTwo<wordList.length){
-        let item = new Set(pervious.split(""));
-        let current = wordList[runner].split("");
-        
-        for(var i=0;i<current.length;i++){
-            if(item.has(current[i])){
-                count++;
+    var chain = [];
+    var foundend = false;
+
+    
+        while(foundend != true){
+
+            for(var i=runner;i<wordList.length ;i++){
+
+                let item = new Set(pervious.split(""));
+                let current = wordList[i].split("");
+
+                for(var a=0;a<current.length;a++){
+                    if(item.has(current[a])){
+                        count++;
+                    }
+                }
+
+                console.log(wordList[i]);
+
+                if(wordList[i] === end){
+                    console.log("found");
+                    foundend=true;
+                    break;
+                }else if(count === end.length-1){
+                    //chain.push(wordList[i]);
+                    // console.log(wordList[i])
+                    pervious = wordList[i];
+                }
+                count = 0; 
             }
-        }
-
-        console.log(count);
-        console.log(pervious);
-        console.log(wordList[x]);
-        
-        if(count === 3){
-            chain.push(wordList[runner]);
+            if(foundend != true){     
+                chain = [];
+            }
             runner++;
-            pervious = wordList[perviousIterator];
         }
-        count = 0;   
-        runner++;
 
-    }
-    console.log(chain);
+        console.log(chain);
+        return chain.length;
 }
 
 console.log(wordLadder("cold","warm",["cold", "gold","cord","sold","card","ward","warm","tard"]));
