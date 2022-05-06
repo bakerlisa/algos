@@ -40,29 +40,24 @@
 function wordLadder(begin, end, wordList) {
     var pervious = begin;
     var count = 0;
-    var notIn = "";
-    var chain = [];
+    var chain = [begin];
 
     const item = new Set(end.split(""));
 
     for(var i=1; i < wordList.length;i++){
         if(wordList[i] === end){
-            return chain.length;
+            break;
         }else{
-            let word = new Set(wordList[i].split(""));
+            let word = wordList[i].split("");
             pervious = pervious.split("");
 
             for(var k=0;k<pervious.length;k++){
-                if(word.has(pervious[k])){
+                if(word[k] === pervious[k]){
                     count++;
-                }else{
-                    notIn = pervious[k];
                 }
             }
-            if(count <= 3){
-                if(!item.has(notIn)){
-                    chain.push(wordList[i]);
-                }              
+            if(count >= 3){ 
+                chain.push(wordList[i]);
             }
         }
         count = 0;
@@ -72,8 +67,8 @@ function wordLadder(begin, end, wordList) {
     return chain.length;
 }
 
+console.log(wordLadder("cold","warm",["cold", "gold","cord","sold","card","ward","warm","tard"]));
 console.log(wordLadder("fool","sage",["fool", "pool", "poll", "pole", "pale", "sale", "sage"]));
-
 
 // for(var j=0;j<word.length;j++){
 //     if(item.has(word[j])){
