@@ -38,9 +38,6 @@
 
 /////////
 function wordLadder(begin, end, wordList) {
-
-    var end = end;
-    var word_list = wordList;
     var pervious = begin;
     var count = 0;
     var notIn = "";
@@ -48,11 +45,11 @@ function wordLadder(begin, end, wordList) {
 
     const item = new Set(end.split(""));
 
-    for(var i=1; i < word_list.length;i++){
-        if(word_list[i] === end){
+    for(var i=1; i < wordList.length;i++){
+        if(wordList[i] === end){
             break;
         }else{
-            let word = new Set(word_list[i].split(""));
+            let word = new Set(wordList[i].split(""));
             pervious = pervious.split("");
 
             for(var k=0;k<pervious.length;k++){
@@ -64,12 +61,12 @@ function wordLadder(begin, end, wordList) {
             }
             if(count <= 3){
                 if(!item.has(notIn)){
-                    chain.push(word_list[i]);
+                    chain.push(wordList[i]);
                 }              
             }
         }
         count = 0;
-        pervious = word_list[i];
+        pervious = wordList[i];
     }
     return chain.length;
 }
