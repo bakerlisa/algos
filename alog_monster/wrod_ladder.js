@@ -81,16 +81,18 @@
 ///// THREE
 function wordLadder(begin, end, wordList) {
     var pervious = begin;
+    var chain = [];
     var count = 0;
     var runner = 1;
-    
-    var chain = [];
     var foundend = false;
 
     
         while(foundend != true){
+            chain = [];
+            pervious = begin;
 
             for(var i=runner;i<wordList.length ;i++){
+                console.log(wordList[i])
 
                 let item = new Set(pervious.split(""));
                 let current = wordList[i].split("");
@@ -100,28 +102,27 @@ function wordLadder(begin, end, wordList) {
                         count++;
                     }
                 }
-
-                console.log(wordList[i]);
-
-                if(wordList[i] === end){
-                    console.log("found");
+                // console.log(pervious)
+                if(pervious === end){
                     foundend=true;
                     break;
-                }else if(count === end.length-1){
-                    //chain.push(wordList[i]);
-                    // console.log(wordList[i])
-                    pervious = wordList[i];
+                }
+
+                if(count >= end.length-1){
+                    chain.push(wordList[i]);
+                    pervious = wordList[i]; 
+                    if(wordList[i] === end){
+                        foundend=true;
+                        break;
+                    }                   
                 }
                 count = 0; 
             }
-            if(foundend != true){     
-                chain = [];
-            }
+            
             runner++;
         }
 
-        console.log(chain);
-        return chain.length;
+    return chain.length;
 }
 
 console.log(wordLadder("cold","warm",["cold", "gold","cord","sold","card","ward","warm","tard"]));
