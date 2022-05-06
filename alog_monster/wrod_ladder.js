@@ -47,7 +47,7 @@ function wordLadder(begin, end, wordList) {
 
     for(var i=1; i < wordList.length;i++){
         if(wordList[i] === end){
-            break;
+            return chain.length;
         }else{
             let word = new Set(wordList[i].split(""));
             pervious = pervious.split("");
@@ -68,10 +68,11 @@ function wordLadder(begin, end, wordList) {
         count = 0;
         pervious = wordList[i];
     }
+    console.log(chain);
     return chain.length;
 }
 
-console.log(wordLadder("cold","warm",["cold", "gold","cord","sold","card","ward","warm","tard"]));
+console.log(wordLadder("fool","sage",["fool", "pool", "poll", "pole", "pale", "sale", "sage"]));
 
 
 // for(var j=0;j<word.length;j++){
