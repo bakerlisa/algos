@@ -32,7 +32,7 @@ function getTotalX(a, b) {
         }
     });  
 
-    if(b.length === 1){
+    if(b.length === 1 && a[0] == 1){
         allFactors.add(b[0]);
     }
 
