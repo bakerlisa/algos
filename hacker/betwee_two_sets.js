@@ -1,6 +1,6 @@
 function getTotalX(a, b) {
     var allFactors = new Set();
-    var runner = 2;
+    var runner = 1;
 
     //finds all the factors that each one has (excepct for copies)
     for(var x=0;x<b.length;x++){
@@ -10,7 +10,7 @@ function getTotalX(a, b) {
             }
             runner++;
         }
-        runner = 2;
+        runner = 1;
     }
 
     //filtes out any factors that don't fit with b
@@ -32,10 +32,15 @@ function getTotalX(a, b) {
         }
     });  
 
-    console.log(allFactors);
+    if(b.length === 1){
+        allFactors.add(b[0]);
+    }
+
     return allFactors.size;
 }
-console.log(getTotalX([2, 4],[16,32,96]));
+console.log(getTotalX([1],[100]));
+console.log(getTotalX([1],[72,48]));
+// console.log(getTotalX([2, 4],[16,32,96]));
 // console.log(getTotalX([3, 4],[24,48]));
 
 
