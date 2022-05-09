@@ -1,47 +1,90 @@
 function dayOfProgrammer(year) {
     // Write your code here
-    var days = 256;
+    var days = 0;
     var month;
     var day;
-    var daysMonths = {"01":31,"02":0,"03":31,"04":30,"05":31,"06":30,"07":31,"08":31,"09":30,"10":31,"11":30,"12":31}
+    var daysMonths = {"jan":31,"feb":0,"mar":31,"apr":30,"may":31,"june":30,"july":31,"aug":31,"sep":30,"oct":31,"nov":30,"dec":31}
 
     if(year < 1700){
         return "outside range";
     }else if(year > 1918){
         // Gregorian calendar
-        if(year % 4 === 0 || year % 400 === 0 ){
-            console.log("here")
-            daysMonths['feb'] = 28
+        if(year % 4 === 0 || year % 400 === 0){
+            if(year % 100 === 0){    
+                daysMonths['feb'] = 28;
+            }else{
+                daysMonths['feb'] = 29;
+            }
         }else{
-            daysMonths['feb'] = 29
+            daysMonths['feb'] = 28;
         }
     }else{
         // Julian calendar
         if(year % 2 === 0 ){
-            daysMonths['feb'] = 27
+            daysMonths['02'] = 27
         }else{
-            daysMonths['feb'] = 26;
+            daysMonths['02'] = 26;
+        }
+    }
+    console.log(daysMonths);
+
+    for (const [key, value] of Object.entries(daysMonths)) {
+        if(days + value < 256){
+            days+=value;
+        }else{
+            month = key;
+            day = (256 - days) ;
+            break;
         }
     }
 
-    for (const [key, value] of Object.entries(daysMonths)) {
-        if(days - value < 0){
-            month = key;
-            day = value;
+    // day formatting
+    if(day < 10){
+        day = "0" + day;
+    } 
+    //month
+    switch(month) {
+        case "jan":
+            month = "01";
             break;
-        }else{
-            days-=value;
-        }
-    }
-    
-    // day
-    if(day > days){
-        day -= days;
-    }else{
-        day = days - day;
+        case "feb":
+            month = "02";
+            break;
+        case "mar":
+            month = "03";
+            break;
+        case "apr":
+            month = "04";
+            break;
+        case "may":
+            month = "05";
+            break;
+        case "june":
+            month = "06";
+            break;
+        case "july":
+            month = "07";
+            break;
+        case "aug":
+            month = "08";
+            break;
+        case "sep":
+            month = "09";
+            break;
+        case "oct":
+            month = "10";
+            break;
+        case "nov":
+            month = "11";
+            break;
+        case "dec":
+            month = "12";
+            break;
+        default:
+          // code block
     }
 
     return day+"."+month+"."+year;
 }
 
-console.log(dayOfProgrammer(1900));
+console.log(dayOfProgrammer(1984));
