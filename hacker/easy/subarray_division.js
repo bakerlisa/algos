@@ -1,17 +1,30 @@
 function birthday(s, d, m) {
     // Write your code here
-    var per = s[0];
+
+    var running = 0;
     var total = 0;
-    for(var i=1; i< s.length;i++){
-        console.log( s[i]);
-        console.log(per);
-        console.log();
-        if(per + s[i] === m){
+    
+    for(var i=0; i <= s.length ;i++){
+        var j=0;
+        var counter = i;
+        while(j != m){
+            if(s[counter]){
+                running += s[counter];
+                counter++;
+                j++;
+            }else{
+                break;
+            }
+        }
+
+        if(running === d){
             total++;
         }
-        per = s[i];
+        running = 0;
+        counter = 0;
     }
-    console.log(total);
+    return total;
 }
 
 console.log(birthday([ 1, 2, 1, 3, 2 ],3,2));
+// console.log(birthday([4],4,1));
