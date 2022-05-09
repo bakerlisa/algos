@@ -9,21 +9,23 @@ function dayOfProgrammer(year) {
         return "outside range";
     }else if(year > 1918){
         // Gregorian calendar
-        if(year % 4 === 0 || year % 400 === 0){
-            if(year % 100 === 0){    
+        if(year % 4 === 0){
+            if(year % 400 === 0){
+                daysMonths['feb'] = 28;
+            }else if(year % 100 === 0){    
                 daysMonths['feb'] = 28;
             }else{
                 daysMonths['feb'] = 29;
             }
         }else{
-            daysMonths['feb'] = 28;
+            daysMonths['feb'] = 28
         }
     }else{
         // Julian calendar
-        if(year % 2 === 0 ){
-            daysMonths['02'] = 27
+        if(year % 2 === 0){
+            daysMonths['feb'] = 29;
         }else{
-            daysMonths['02'] = 26;
+            daysMonths['feb'] = 28;
         }
     }
     console.log(daysMonths);
@@ -80,11 +82,9 @@ function dayOfProgrammer(year) {
         case "dec":
             month = "12";
             break;
-        default:
-          // code block
     }
 
     return day+"."+month+"."+year;
 }
 
-console.log(dayOfProgrammer(1984));
+console.log(dayOfProgrammer(1914));
