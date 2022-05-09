@@ -1,18 +1,16 @@
 function divisibleSumPairs(n, k, ar) {
     // Write your code here
-    var per = ar[0];
-    var add = 0;
+    var adds = new Set();
     var total = 0;
     
-    for(var i=1; i< ar.length;i++){
-        console.log(ar[i] + ar[per]);
-        if((ar[i] + ar[per]) % k === 0){
-            total++;
+    for(var i=0; i< ar.length;i++){
+        for(var j=0+i;j<ar.length;j++){
+            if((ar[i]+ar[j]) % k === 0){
+                total++;
+            }
         }
-    
-        per = i;
     }
-    
+    console.log(total)
     return total;
 }
 
