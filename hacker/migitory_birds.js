@@ -29,10 +29,10 @@ function migratoryBirds(arr) {
         }
         counter++;
     }
-    // console.log(`mostSeen: ${mostSeenName} : ${mostSeen}`);
+    console.log(`mostSeen: ${mostSeenName} : ${mostSeen}`);
 
-    return mostSeen;
+    return mostSeenName;
 }
 
-// console.log(migratoryBirds([1,1,1,4,4,4,5,3]));
-migratoryBirds([4,4,4,5,3,1,1,1]);
+console.log(migratoryBirds([1,1,1,1,4,4,4,5,3,3,3,3]));
+// migratoryBirds([4,4,4,5,3,1,1,1]);
