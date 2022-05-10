@@ -7,16 +7,16 @@ function dayOfProgrammer(year) {
 
     if(year < 1700 || year > 2700){
         return "outside range";
-    }else if(year >= 1918){
+    }else if(year > 1918){
         // Gregorian calendar
-        if(year % 4 === 0 && year % 100 != 0){
+        if(year % 4 === 0 && year % 100 != 0 || year % 400 === 0){
             daysMonths['feb'] = 29;
         }else{
             daysMonths['feb'] = 28;
         }
     }else{
         // Julian calendar
-        if(year % 2 === 0){
+        if(year % 4 === 0){
             daysMonths['feb'] = 29;
         }else{
             daysMonths['feb'] = 28;
@@ -26,10 +26,12 @@ function dayOfProgrammer(year) {
 
     for (const [key, value] of Object.entries(daysMonths)) {
         if(days + value <= 256){
+            console.log(value);
             days+=value;
         }else{
             month = key;
-            day = (256 - days) ;
+            console.log(days)
+            day = (256 - days);
             break;
         }
     }
@@ -78,8 +80,11 @@ function dayOfProgrammer(year) {
             month = "12";
             break;
     }
-
-    return day+"."+month+"."+year;
+    if(year == 1918){
+        return "26.09.1918"
+    }else{
+        return day+"."+month+"."+year
+    }
 }
 
-console.log(dayOfProgrammer(1914));
+console.log(dayOfProgrammer(1918));
