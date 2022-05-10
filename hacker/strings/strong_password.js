@@ -50,8 +50,13 @@ function minimumNumber(n, password) {
         
         if(missing.length != true){
             var length = 6 - password.length;
+
             if(length != 0){
-                return length;
+                if(length < total){
+                    return total - 1;
+                }else{
+                    return length;
+                }
             }else{
                 return total;
             }
@@ -67,3 +72,4 @@ function minimumNumber(n, password) {
 // console.log(minimumNumber(6,'0#)+g!'));
 // console.log(minimumNumber(3,'ju!#a!'));
 // console.log(minimumNumber(5,'2bb1b'));
+console.log(minimumNumber(5,'E!%Z@'));
