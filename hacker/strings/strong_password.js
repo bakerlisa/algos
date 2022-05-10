@@ -14,6 +14,7 @@ function minimumNumber(n, password) {
     };
 
         if(password.length >= 6){
+            missing.length = true;
             total--;
         }
         for(var i=0;i<n;i++){
@@ -63,6 +64,6 @@ function minimumNumber(n, password) {
 
 // console.log(minimumNumber(11,'#HackerRank'));
 // console.log(minimumNumber(3,'Ab1'));
-console.log(minimumNumber(6,'0#)+g!'));
+// console.log(minimumNumber(6,'0#)+g!'));
 // console.log(minimumNumber(3,'ju!#a!'));
 // console.log(minimumNumber(5,'2bb1b'));
