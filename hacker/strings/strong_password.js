@@ -20,11 +20,9 @@ function minimumNumber(n, password) {
             if(total === 0){
                 return 0;
             }else{
-                if(password.length >= 6 && missing["length"] === false){
+                if(password.length > 6 && missing["length"] === false){
                     total--;
                     missing.length = true;
-                }else{
-                    missing.length = 6 - password.length;
                 }
                 if(numbers[password[i]] === 0 && missing["number"] === false){
                     total--;
@@ -44,12 +42,15 @@ function minimumNumber(n, password) {
                 }
             }
         }
-        console.log(missing)
-        console.log((total + 1))
-        if(missing.length < (6 - (total + 1) )){
-            total = (6 - (total + 1));
+
+        if(missing.length != true){
+            if( missing.length < (6 - (total + 1) )){
+                total = (6 - (total + 1));
+            }else{
+                total = missing.length;
+            }
         }else{
-            total = missing.length;
+
         }
 
         
