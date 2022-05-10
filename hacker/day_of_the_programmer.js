@@ -5,20 +5,14 @@ function dayOfProgrammer(year) {
     var day;
     var daysMonths = {"jan":31,"feb":0,"mar":31,"apr":30,"may":31,"june":30,"july":31,"aug":31,"sep":30,"oct":31,"nov":30,"dec":31}
 
-    if(year < 1700){
+    if(year < 1700 || year > 2700){
         return "outside range";
-    }else if(year > 1918){
+    }else if(year >= 1918){
         // Gregorian calendar
-        if(year % 4 === 0){
-            if(year % 400 === 0){
-                daysMonths['feb'] = 28;
-            }else if(year % 100 === 0){    
-                daysMonths['feb'] = 28;
-            }else{
-                daysMonths['feb'] = 29;
-            }
+        if(year % 4 === 0 && year % 100 != 0){
+            daysMonths['feb'] = 29;
         }else{
-            daysMonths['feb'] = 28
+            daysMonths['feb'] = 28;
         }
     }else{
         // Julian calendar
@@ -31,7 +25,7 @@ function dayOfProgrammer(year) {
     console.log(daysMonths);
 
     for (const [key, value] of Object.entries(daysMonths)) {
-        if(days + value < 256){
+        if(days + value <= 256){
             days+=value;
         }else{
             month = key;
@@ -44,6 +38,7 @@ function dayOfProgrammer(year) {
     if(day < 10){
         day = "0" + day;
     } 
+
     //month
     switch(month) {
         case "jan":
