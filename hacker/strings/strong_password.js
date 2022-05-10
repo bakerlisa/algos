@@ -13,29 +13,31 @@ function minimumNumber(n, password) {
         length:false
     };
 
-        if(password.length > 6){
+        if(password.length >= 6){
             total--;
-            missing.length = true;
         }
         for(var i=0;i<n;i++){
-
             if(total === 0){
-                console.log(missing)
                 return 0;
             }else{
-                if(numbers[password[i]] === 0 && missing["number"] === false){
+                
+                if(numbers[password.charAt(i)] === 0 && missing["number"] === false){
                     total--;
                     missing.number = true;
                 }
-                if(lower_case[password[i]] === 0 && missing["lower"] === false){
+
+                if(lower_case[password.charAt(i)] === 0 && missing["lower"] === false){
+                    
                     total--;
                     missing.lower = true;
                 }
-                if(upper_case[password[i]] === 0 && missing["upper"] === false){
+
+                if(upper_case[password.charAt(i)] === 0 && missing["upper"] === false){
                     total--;
                     missing.upper = true;
                 }
-                if(special_characters[password[i]] === 0 && missing["special"] === false){
+
+                if(special_characters[password.charAt(i)] === 0 && missing["special"] === false){
                     total--;
                     missing.special = true;
                 }
@@ -47,9 +49,11 @@ function minimumNumber(n, password) {
         
         if(missing.length != true){
             var length = 6 - password.length;
-            
-            return length;
-            
+            if(length != 0){
+                return length;
+            }else{
+                return total;
+            }
         }else{
             //length is good buts its missing special characters
             return total;
@@ -58,5 +62,7 @@ function minimumNumber(n, password) {
 }
 
 // console.log(minimumNumber(11,'#HackerRank'));
-console.log(minimumNumber(3,'Ab1'));
+// console.log(minimumNumber(3,'Ab1'));
+console.log(minimumNumber(6,'0#)+g!'));
+// console.log(minimumNumber(3,'ju!#a!'));
 // console.log(minimumNumber(5,'2bb1b'));
