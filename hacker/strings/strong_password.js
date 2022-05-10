@@ -13,17 +13,16 @@ function minimumNumber(n, password) {
         length:false
     };
 
-
-        
-
+        if(password.length > 6){
+            total--;
+            missing.length = true;
+        }
         for(var i=0;i<n;i++){
+
             if(total === 0){
+                console.log(missing)
                 return 0;
             }else{
-                if(password.length > 6 && missing["length"] === false){
-                    total--;
-                    missing.length = true;
-                }
                 if(numbers[password[i]] === 0 && missing["number"] === false){
                     total--;
                     missing.number = true;
@@ -43,21 +42,21 @@ function minimumNumber(n, password) {
             }
         }
 
+        // look at length
+        console.log(missing);
+        
         if(missing.length != true){
-            if( missing.length < (6 - (total + 1) )){
-                total = (6 - (total + 1));
-            }else{
-                total = missing.length;
-            }
+            var length = 6 - password.length;
+            
+            return length;
+            
         }else{
-
+            //length is good buts its missing special characters
+            return total;
         }
 
-        
-
-        return total;
 }
 
 // console.log(minimumNumber(11,'#HackerRank'));
-// console.log(minimumNumber(3,'Ab1'));
-console.log(minimumNumber(5,'2bbbb'));
+console.log(minimumNumber(3,'Ab1'));
+// console.log(minimumNumber(5,'2bb1b'));
