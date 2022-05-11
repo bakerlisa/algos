@@ -2,7 +2,7 @@
 
 I'm trying to get better at them! Here are a few of the resources I've seen to practice algos:
 
-![](https://github.com/lisabroadhead/lisabroadhead/blob/main/lisa.png) 
+![](https://github.com/lisabroadhead/algos/blob/main/0_G2xt1UgNhlPASYz5.jpeg) 
 
 1. HackerRanker - https://www.hackerrank.com/
 2. CodeWars - https://www.codewars.com/
