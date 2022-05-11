@@ -4,6 +4,8 @@ I'm trying to get better at them! Here are a few of the resources I've seen to p
 
 ![](https://github.com/lisabroadhead/algos/blob/main/0_G2xt1UgNhlPASYz5.jpeg) 
 
+Though this is probably the case, for some jobs we must know algos...sigh! Here are a few of the resources I've found to practice! DM if you have more!
+
 1. HackerRanker - https://www.hackerrank.com/
 2. CodeWars - https://www.codewars.com/
 3. Coding Dojo - https://github.com/TheCodingDojo/algorithms
