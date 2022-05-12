@@ -28,7 +28,7 @@ function getMaxArea(w, h, isVertical, distance) {
         
     return total;
 }
-// console.log(getMaxArea(4,4,[0,1],[3,1]));
+console.log(getMaxArea(4,4,[0,1],[3,1]));
 // console.log(getMaxArea(2,2,[1,2],[1,1]));
-console.log(getMaxArea(3,4,[1,1],[1,3]));
+// console.log(getMaxArea(3,4,[1,1],[1,3]));
 // [9,6]
