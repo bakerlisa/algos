@@ -21,7 +21,6 @@ permutations = () => {
                 }
             }
 
-            console.log(mutations)
         if(round === true && mutations["b"] === 2){
             total++;
         }
