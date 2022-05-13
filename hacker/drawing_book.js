@@ -1,23 +1,32 @@
 function pageCount(n, p) {
     var pagesTurn = 0;
-    if(p === 2 || p === 3){
-        pagesTurn = 1;
+
+    if( n - 1 === p && (n % 2 != 0)){
+        pagesTurn = 0;
     }else if((n % 2 === 0) && (p+1 == n || p +2 === n) ){
         pagesTurn = 1;
     }else if( (p % 2 === 0) && n - 1 === p){
         pagesTurn = 0;
     }else{
-        if( n / 2 > p){
-            //front front
+        if( Math.ceil(n / 2) > p){
+            // from front
             for(var i=1;i<n;i++){
-                if(i ){
-
+                if(i == p || i - 1 == p  ){
+                    break;
+                }else{
+                    i++;
+                    pagesTurn++;
                 }
             }
         }else{
-            // front back
+            // from back
             for(var i=n;1<n;i--){
-
+                if(i == p || i - 1 == p  ){
+                    break;
+                }else{
+                    i--;
+                    pagesTurn++;
+                }
             }
         }
     }
@@ -25,5 +34,9 @@ function pageCount(n, p) {
 }
 
 
-// console.log(pageCount(6,5));
-console.log(pageCount(25,6));
+console.log(pageCount(6,5));
+// console.log(pageCount(6,2));
+// console.log(pageCount(5,4));
+// console.log(pageCount(25,15));
+// console.log(pageCount(2,1));
+// console.log(pageCount(7,4));x
