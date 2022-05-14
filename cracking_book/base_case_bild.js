@@ -11,6 +11,9 @@ base_case_build = (string) => {
             results.push((string[1]+ stringArray[0]));
             results.push( stringArray[0] + string[1]);
         }
+        if(results.length > 1){
+            
+        }
     }
 
 
