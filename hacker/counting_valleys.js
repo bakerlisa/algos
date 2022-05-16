@@ -23,15 +23,14 @@ function countingValleys(steps, path) {
             console.log(`travel - up: ${travel - up}`)
             console.log(`travel - down: ${travel - down}`)
         
-            if(travel >= 0 && down < 0){
+            if((travel - (up + down) >= 0) && down != 0){
                 console.log("add valley")
                 valley++;
             }
-
             up=0;
             down=0;
-            console.log()
         }
+        
         if(path[i] === 'U'){
             travel++;
             up++;
@@ -56,7 +55,7 @@ function countingValleys(steps, path) {
 // console.log(countingValleys(10, "UDUUUDUDDD"));
 // 0
 
-console.log(countingValleys(100, "DUDUUUUUUUUDUDDUUDUUDDDUUDDDDDUUDUUUUDDDUUUUUUUDDUDUDUUUDDDDUUDDDUDDDDUUDDUDDUUUDUUUDUUDUDUDDDDDDDDD"));
+// console.log(countingValleys(100, "DUDUUUUUUUUDUDDUUDUUDDDUUDDDDDUUDUUUUDDDUUUUUUUDDUDUDUUUDDDDUUDDDUDDDDUUDDUDDUUUDUUUDUUDUDUDDDDDDDDD"));
 // 2
 
 
