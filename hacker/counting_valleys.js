@@ -9,48 +9,44 @@ function countingValleys(steps, path) {
         travel++;
         up++;
     }else if(path[0] === 'D'){
-        travel++;
+        travel--;
         down++;
     }
 
-
+    
     // Write your code here
-    for(var i=1;i<steps;i++){
-        if(path[i] === 'U'){
-            travel++;
-        }else if(path[i] === 'D'){
-            travel--;
-        }
-
-        if(past === "U" && path[i] === "D"){
-            console.log(`i: ${i}`)
+    for(var i=1;i<=steps;i++){
+        if(past === "U" && path[i] === "D" || i === steps){
             console.log(`up: ${up}`)
             console.log(`down: ${down}`)
-            console.log(`down: ${up - down}`)
+            console.log(`travel: ${travel}`)
+            console.log(`travel - up: ${travel - up}`)
+            console.log(`travel - down: ${travel - down}`)
         
-            if(travel === 0 && (travel - up >=0 ||  travel - down < 0)){
+            if(travel >= 0 && down < 0){
                 console.log("add valley")
                 valley++;
             }
-            travel = 0;
+
             up=0;
             down=0;
             console.log()
-        }else{
-            if(path[i] === 'U'){
-                up++;
-            }else if(path[i] === 'D'){
-                down--;
-            }
         }
-        
+        if(path[i] === 'U'){
+            travel++;
+            up++;
+        }else if(path[i] === 'D'){
+            travel--;
+            down--;
+        }
+
         past = path[i];
     }
 
     return  `valley: ${valley}`;
 }
 
-console.log(countingValleys(8, "UDDDUDUU"));
+// console.log(countingValleys(8, "UDDDUDUU"));
 // 1
 
 // console.log(countingValleys(12, "DD UU DD U D UUU D"));
@@ -60,7 +56,7 @@ console.log(countingValleys(8, "UDDDUDUU"));
 // console.log(countingValleys(10, "UDUUUDUDDD"));
 // 0
 
-// console.log(countingValleys(100, "DUDUUUUUUUUDUDDUUDUUDDDUUDDDDDUUDUUUUDDDUUUUUUUDDUDUDUUUDDDDUUDDDUDDDDUUDDUDDUUUDUUUDUUDUDUDDDDDDDDD"));
+console.log(countingValleys(100, "DUDUUUUUUUUDUDDUUDUUDDDUUDDDDDUUDUUUUDDDUUUUUUUDDUDUDUUUDDDDUUDDDUDDDDUUDDUDDUUUDUUUDUUDUDUDDDDDDDDD"));
 // 2
 
 
