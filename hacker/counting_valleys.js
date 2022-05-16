@@ -29,8 +29,9 @@ function countingValleys(steps, path) {
         
         
         if(past === "U" && path[i] === "D"){
-            travel++;
-            if(travel === 0 && up >= 0 && down < 0){
+    
+
+            if(travel === 0 && up >= 0 && (down + 1) < 0){
                 valley++;
             }
             up=0;
@@ -43,7 +44,7 @@ function countingValleys(steps, path) {
     return  `valley: ${valley}`;
 }
 
-console.log(countingValleys(8, "UDDDUDUU"));
+// console.log(countingValleys(8, "UDDDUDUU"));
 // 1
 
 // console.log(countingValleys(12, "DD UU DD U D UUU D"));
@@ -52,4 +53,8 @@ console.log(countingValleys(8, "UDDDUDUU"));
 
 // console.log(countingValleys(10, "UDUUUDUDDD"));
 // 0
+
+console.log(countingValleys(100, "DUDUUUUUUUUDUDDUUDUUDDDUUDDDDDUUDUUUUDDDUUUUUUUDDUDUDUUUDDDDUUDDDUDDDDUUDDUDDUUUDUUUDUUDUDUDDDDDDDDD"));
+// 2
+
 
