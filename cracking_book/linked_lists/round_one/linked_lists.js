@@ -74,9 +74,12 @@ list.add(13);
 list.add(14);
 // console.log(list)
 
-// REMOVE
+// REMOVE FROM BACK
 // list.removeFromBack();
 // list.removeFromBack();
+
+// REMOVE FROM FRONT
+list.removeFromFront()
 
 // SHOWALL
 console.log(list.showAll())
