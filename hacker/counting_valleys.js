@@ -26,7 +26,7 @@ function countingValleys(steps, path) {
             if((travel - (up + down) >= 0) && down != 0){
                 console.log("add valley")
                 valley++;
-            }
+            }notes
             travel = up - down;
             up=0;
             down=0;
