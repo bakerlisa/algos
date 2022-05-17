@@ -14,6 +14,15 @@ function formingMagicSquare(s) {
         indvCost = 0;
 
         //columns
+        console.log(s[0])
+        var counter = 0;
+        for(var j=0;j<3;j++){
+            for(var l=0;l<3;l++){
+                console.log(s[j][l])
+            }
+            // indvCost += s[counter][j]
+        }
+        console.log()
 
         //diagonals
 
