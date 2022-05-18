@@ -44,6 +44,15 @@ class List{
         this.tail = pervious;
         pervious.next = null;
     }
+
+    removeFromFront(){
+        var runner = this.head;
+        if(this.head != null){
+            var temp = this.head.next;
+            this.head.next = null;
+            this.head = temp;
+        }
+    }
     
     showAll(){
         var runner = this.head;
@@ -63,23 +72,27 @@ class List{
 
 var list = new List();
 
+// ======= SLL =======
 // IS_EMPTY
-// console.log(list.isEmpty());
+    // console.log(list.isEmpty());
 
 // ADD
-list.add(10);
-list.add(11);
-list.add(12);
-list.add(13);
-list.add(14);
-// console.log(list)
+    list.add(10);
+    list.add(11);
+    list.add(12);
+    list.add(13);
+    list.add(14);
+    // console.log(list)
 
 // REMOVE FROM BACK
-// list.removeFromBack();
+    // list.removeFromBack();
 // list.removeFromBack();
 
 // REMOVE FROM FRONT
-list.removeFromFront()
+    // list.removeFromFront()
+    // list.removeFromFront()
+
+
 
 // SHOWALL
-console.log(list.showAll())
+    console.log(list.showAll())
