@@ -55,6 +55,7 @@ class List{
             var temp = this.head.next;
             this.head.next = null;
             this.head = temp;
+            this.head.previous = null;
         }
     }
     
@@ -76,7 +77,7 @@ class List{
 
 var list = new List();
 
-// ======= SLL =======
+// ======= DLL =======
 // IS_EMPTY
     // console.log(list.isEmpty());
 
@@ -89,14 +90,12 @@ var list = new List();
     // console.log(list)
 
 // REMOVE FROM BACK
-    list.removeFromBack();
+    // list.removeFromBack();
     // list.removeFromBack();
 
 // REMOVE FROM FRONT
     // list.removeFromFront()
     // list.removeFromFront()
-
-// ======= DLL =======
 
 
 
