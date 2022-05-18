@@ -23,30 +23,33 @@ class List{
         var newNode = new Node(val);
         this.tail = newNode;
         var runner = this.head;
+        var walker = this.head;
 
         if(this.head === null){
             this.head = newNode;
+            this.previous = null
         }else{
             while(runner.next != null){
+                walker = runner;
                 runner = runner.next;
             }
+            runner.previous = walker;
             runner.next = newNode;
         }
     }
 
     removeFromBack(){
         var runner = this.head;
-        var pervious = this.head;
+        var previous = this.head;
         while(runner.next != null){
-            pervious = runner;
+            previous = runner;
             runner = runner.next;
         }
-        this.tail = pervious;
-        pervious.next = null;
+        this.tail = previous;
+        previous.next = null;
     }
 
     removeFromFront(){
-        var runner = this.head;
         if(this.head != null){
             var temp = this.head.next;
             this.head.next = null;
@@ -63,7 +66,7 @@ class List{
             }else if(runner === this.tail){
                 console.log(`Tail: ${runner.value}`);    
             }else{
-                console.log(runner.value);
+                console.log(`Value: ${runner.value}, Next: ${runner.next.value}, Pervious: ${runner.previous.value}`);
             }
             runner = runner.next;
         }
