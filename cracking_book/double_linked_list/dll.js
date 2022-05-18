@@ -40,13 +40,14 @@ class List{
 
     removeFromBack(){
         var runner = this.head;
-        var previous = this.head;
+        var walker = this.head;
         while(runner.next != null){
-            previous = runner;
+            walker = runner;
             runner = runner.next;
         }
-        this.tail = previous;
-        previous.next = null;
+        this.tail.previous = null
+        this.tail = walker;
+        walker.next = null;
     }
 
     removeFromFront(){
@@ -88,8 +89,8 @@ var list = new List();
     // console.log(list)
 
 // REMOVE FROM BACK
+    list.removeFromBack();
     // list.removeFromBack();
-// list.removeFromBack();
 
 // REMOVE FROM FRONT
     // list.removeFromFront()
