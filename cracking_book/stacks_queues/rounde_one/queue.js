@@ -1,3 +1,5 @@
+// wrote the code but never finished it. Ran out of time for the day
+
 class Node{
     constructor(val){
         this.value = val;
