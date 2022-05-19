@@ -31,16 +31,17 @@ class Stack{
         }
     }
 
-    remove(val){
-        var newNode = new Node(val)
-        if(this.head === null){
-            this.head = newNode;
-        }else{
-            var runner = this.head;
-            while(runner.next != null){
-                runner = runner.next;
-            }
-            runner.next = newNode;
+    peek(){
+        if (this.head != null){
+            return this.head;
+        }
+    }
+
+    remove(){
+        if(this.head != null){
+            let temp = this.head.next;
+            this.head.next = null
+            this.head = temp;
         }
     }
 
@@ -63,9 +64,15 @@ class Stack{
     var stack = new Stack();
 
 // ADD TO STACK
-stack.add(10)
-stack.add(11)
-stack.add(102)
+    stack.add(10)
+    stack.add(11)
+    stack.add(102)
+    stack.remove(102)
+
+// PEEK
+    console.log(stack.peek())
+
+// REMOVE
 
 //  SHOW ALL
     stack.showAll();
