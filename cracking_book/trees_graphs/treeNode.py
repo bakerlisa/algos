@@ -24,7 +24,7 @@ def build_product_tree():
     root.add_child(cellphone)
     root.add_child(tv)
 
-    root.print_tree
+    root.print_tree()
 
 if __name__ == '__main__':
     build_product_tree()
