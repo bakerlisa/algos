@@ -3,10 +3,6 @@ const binary = (binNum) => {
     var runner = 1;
     total = 0;
     
-    // arr.forEach((i) => {
-    //     console.log(binNum[i])
-    // })
-
     for(i=binNum.length - 1;i >= 0; i--){
         runner * arr[i]
         total += (runner * arr[i])
@@ -18,3 +14,6 @@ const binary = (binNum) => {
 console.log(binary('0101'))
 // console.log(binary('1010'))
 // console.log(binary('01010101'))
+
+
+// Tomorrow do the reverse. So take a number and put it into binary
