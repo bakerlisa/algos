@@ -46,7 +46,6 @@ function formingMagicSquare(s) {
 
 function formingMagicSquareAgain(s) {
     const noDiganol = new Set(['s[0][1]','s[1][0]','s[1][2]','s[2][1]'])
-    console.log(noDiganol);
 
     var cost = 0;
     // rows
@@ -54,24 +53,19 @@ function formingMagicSquareAgain(s) {
         let add = (s[i][0]+s[i][1]+s[i][2]);
         if(add != 15){
             missing = Math.abs(15 - add)
+            let row = s[i][0]+s[i][1]+s[i][2] 
+            let col = s[0][i]+s[1][i]+s[2][i]
             //loop looking at up, across, & diagonal
-
-            if(s[i][0] + missing <= 9){
-                if(){
-                    
+            for(var j=0;j<3;j++){
+                if(s[i][j] + missing < 9 && row <= 15 && col <= 15){
+                    cost += missing;
+                    break;
                 }
-            }else if(s[i][1] + missing <= 9){
-                // diagonls
-
-            }else if(s[i][2] + missing <= 9){
-
-            }else{
-                return "been an error"
             }
         }
     }
-
-
+    return cost;
 }
 
-formingMagicSquareAgain([ [ 4, 9, 2 ], [ 3, 5, 7 ], [ 8, 1, 5 ] ])
+// console.log(formingMagicSquareAgain([ [ 4, 9, 2 ], [ 3, 5, 7 ], [ 8, 1, 5 ] ]))
+console.log(formingMagicSquareAgain( [[5, 3, 4], [1, 5, 8], [6, 4, 2]]))
