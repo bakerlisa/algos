@@ -11,7 +11,7 @@ const binary = (binNum) => {
     return total;
 }
 
-console.log(binary('1100100'))
+console.log(binary('1'))
 // console.log(binary('1010'))
 // console.log(binary('01010101'))
 
@@ -20,6 +20,14 @@ console.log(binary('1100100'))
 const reverseBinary = (val) => {
     var start = 1;
     var binNum = "";
+
+    if(val === 1){
+        return 1;
+    }else if(val === 0){
+        return 0;
+    }else if(val < 0){
+        return "neagitve number"
+    }
     
     // gets our starting point
     while(start * 2 < val){
@@ -37,5 +45,8 @@ const reverseBinary = (val) => {
     }
     return binNum;
 }
+console.log(reverseBinary(-11))
 
-console.log(reverseBinary(100))
+
+//  Negative you need to know how many bits you're working with
+// https://www.youtube.com/watch?v=4qH4unVtJkE
