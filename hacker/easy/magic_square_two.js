@@ -55,11 +55,24 @@ function formingMagicSquareAgain(s) {
             missing = Math.abs(15 - add)
             let row = s[i][0]+s[i][1]+s[i][2] 
             let col = s[0][i]+s[1][i]+s[2][i]
-            //loop looking at up, across, & diagonal
+            //loop looking at up, across
             for(var j=0;j<3;j++){
                 if(s[i][j] + missing < 9 && row <= 15 && col <= 15){
                     cost += missing;
                     break;
+                }
+                if((i === 0 && j === 0 || i === 0 && j === 2) || (j === 2 && i === 1) || (i === 2 && j === 1 || i === 2 && j === 2)){
+                    let add1 = s[0][0]+s[1][1] +s[2][2]
+                    if(add1 != 15 ){
+                        cost+= Math.abs(15 - add1)
+                        break;
+                    }
+
+                    let add2 = s[0][2]+s[1][1] +s[2][0]
+                    if(add2 != 15 ){
+                        cost+= Math.abs(15 - add2)
+                        break;
+                    }
                 }
             }
         }
@@ -68,4 +81,8 @@ function formingMagicSquareAgain(s) {
 }
 
 // console.log(formingMagicSquareAgain([ [ 4, 9, 2 ], [ 3, 5, 7 ], [ 8, 1, 5 ] ]))
-console.log(formingMagicSquareAgain( [[5, 3, 4], [1, 5, 8], [6, 4, 2]]))
+    // 1
+// console.log(formingMagicSquareAgain( [[5, 3, 4], [1, 5, 8], [6, 4, 2]]))
+// 7
+console.log(formingMagicSquareAgain( [[4, 8, 2], [4, 5, 7], [6, 1, 6]]))
+    // 4
