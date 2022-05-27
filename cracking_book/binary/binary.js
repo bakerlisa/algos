@@ -11,7 +11,7 @@ const binary = (binNum) => {
     return total;
 }
 
-console.log(binary('010001'))
+console.log(binary('1100100'))
 // console.log(binary('1010'))
 // console.log(binary('01010101'))
 
@@ -22,13 +22,12 @@ const reverseBinary = (val) => {
     var binNum = "";
     
     // gets our starting point
-    while(start * 1 < val){
+    while(start * 2 < val){
         start *= 2;
     }
-
     // builds out binary number
-    while(val >= 1){
-        if(start < val){
+    while(start >= 1){
+        if(start <= val){
             val -= start;
             binNum += "1";
         }else{
@@ -36,10 +35,7 @@ const reverseBinary = (val) => {
         }
         start /= 2;
     }
-
-    
-    console.log(val)
     return binNum;
 }
 
-console.log(reverseBinary(9))
+console.log(reverseBinary(100))
