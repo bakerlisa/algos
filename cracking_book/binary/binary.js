@@ -11,7 +11,7 @@ const binary = (binNum) => {
     return total;
 }
 
-console.log(binary('1'))
+console.log(binary('1000101'))
 // console.log(binary('1010'))
 // console.log(binary('01010101'))
 

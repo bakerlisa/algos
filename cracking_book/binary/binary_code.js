@@ -52,7 +52,24 @@ var alaphabet = {
     Y: 49,
     y: 40,
     Z: 51,
-    z: 52
+    z: 52,
+    '' : 53,
+    ' ': 54,
+    "'": 55,
+    '"': 56,
+    ".": 57,
+    ",": 58,
+    "!": 59,
+    "?": 60
 }
+
+// How to tell the difference between capitals and non capitals
+// How to tell if its a number or not
+// how many bits do we need?
+// What about spaces? - like capital and non capital, space vs. no space
+// ' vs "
+// . vs ,
+// ? vs !
+// dashes 
 
 
