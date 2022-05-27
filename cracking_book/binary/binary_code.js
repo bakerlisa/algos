@@ -60,16 +60,27 @@ var alaphabet = {
     ".": 57,
     ",": 58,
     "!": 59,
-    "?": 60
+    "?": 60,
+    "-": 61,
+    "+": 62,
+    "(":63,
+    ")": 64
 }
 
 // How to tell the difference between capitals and non capitals
 // How to tell if its a number or not
 // how many bits do we need?
-// What about spaces? - like capital and non capital, space vs. no space
+
+// space vs. no space
 // ' vs "
 // . vs ,
 // ? vs !
-// dashes 
+// - vs +
+// ( vs. )
+
+// 16 bit
+
+
+
 
 

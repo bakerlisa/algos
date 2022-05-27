@@ -45,7 +45,10 @@ const reverseBinary = (val) => {
     }
     return binNum;
 }
-console.log(reverseBinary(-11))
+console.log(reverseBinary(99950))
+
+// largest zip code: 99950
+// binary: 11000011001101110
 
 
 //  Negative you need to know how many bits you're working with
