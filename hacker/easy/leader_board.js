@@ -1,6 +1,12 @@
 function climbingLeaderboard(ranked, player) {
+    var arr = {};
+    var currrnet = player[0]
     // Write your code here
-    console.log()
+    for(var i=1;i<player.length;i++){
+        if(currrnet < player[i]){
+            
+        }
+    }
 }
 
 
