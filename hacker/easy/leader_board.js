@@ -4,38 +4,30 @@ function climbingLeaderboard(ranked, player) {
 
     // Write your code here
     for(var i=0;i<player.length;i++){
+        rank = 1;
         for(var j=0;j<ranked.length;j++){
-            if(j === (ranked.length - 1) ){
-                // last
-                place.push(rank); 
-                rank = 1;
-                break;
-            }else if(player[i] > ranked[j]){
+            if(player[i] > ranked[0]){
                 // first
                 place.push(1); 
-                rank = 1;
                 break;
-            }else if(ranked[j] === player[i]){
+            }else if(ranked[j] === player[i] || j === (ranked.length - 1) ){
                 // equal
+                rank++;
                 place.push(rank);
-                rank = 1;
                 break;
             }else{
                 // everything else
-                if(ranked[j+1] >= player[i] ){
-                    if(ranked[j] != ranked[j+1]){
-                        rank++;
-                    }
-                }else{
+                if(ranked[j] != ranked[j+1]){
+                    rank++;
+                }
+                if(ranked[j] >= player[i] && ranked[j+1] <= player[i]){
                     place.push(rank);
-                    rank = 1;
                     break;
                 }
             }
         }
 
     }
-    console.log(rank)
     return place;
 }
 
