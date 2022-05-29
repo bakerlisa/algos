@@ -9,9 +9,9 @@ function climbingLeaderboard(ranked, player) {
             rank = 1;
 
             if(ranked[half] > player[i]){
-                j = half
+                var j = half
             }else{
-                j = 0;
+                var j = 0;
             }
 
             while(j<ranked.length){
