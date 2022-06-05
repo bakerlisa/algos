@@ -35,5 +35,6 @@ function pickingNumbers(a) {
     return returnTotal;
 }
 
-console.log(pickingNumbers([ 4, 6, 5, 3, 3, 1 ]))
+// console.log(pickingNumbers([ 4, 6, 5, 3, 3, 1 ]))
 // console.log(pickingNumbers([ 1, 2, 2, 3, 1, 2 ]))
+console.log(pickingNumbers([ 98, 3, 99, 1, 97, 2 ]))
