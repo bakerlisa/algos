@@ -25,13 +25,15 @@ function pickingNumbers(a) {
         total += a[i]
     }
 
-    var middle = Math.round(total / a.length);
+    var middle = Math.floor(total / a.length);
+
     for(var j=0; j<a.length;j++){
         if(Math.abs(a[j] - middle) <= 1){
             returnTotal++;
         }
     }
-    console.log(returnTotal)
+    return returnTotal;
 }
 
-console.log(pickingNumbers([ 1, 2, 2, 3, 1, 2 ]))
+console.log(pickingNumbers([ 4, 6, 5, 3, 3, 1 ]))
+// console.log(pickingNumbers([ 1, 2, 2, 3, 1, 2 ]))
