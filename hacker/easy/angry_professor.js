@@ -1,13 +1,12 @@
 function angryProfessor(k, a) {
     var students = 0
+    
 
-    for(var i=0;i<=a.length;i++){
-        if(a[i] <= 0){
-            students++
-        }   
+    for(const arriavelTime of a){
+        students += arriavelTime <= 0;
     }
-    console.log(`students ${students} : ${k}`)
-    return students >= k ?  "YES" : "NO";
+
+    return students >= k ?  "NO" : "YES";
 }
 
 // console.log(angryProfessor([4,3],[-2,-1,0,2]))
