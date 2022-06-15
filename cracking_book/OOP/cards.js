@@ -1,19 +1,17 @@
 class Deck{
-    constructor(deck){
-        this.deck = deck
+    constructor(){
+        this.cards = []
     }
 
     createDeck(deck){
-        var newCard;
-        for(var i=0;i<=52;i++){
-            for(var j=0; j<=4; j++){
-                if(j % 2 === 0){
-                    newCard = new Card(i,'red')
-                }else{
-                    newCard = new Card(i,'black')
-                }
-            }
-        }
+        var suits = ['♣️', '🖤 ','♠️','♦️']
+        var nums = ['A',2,3,4,5,6,7,8,9,'J','Q','K']
+
+        
+    }
+
+    add(){
+
     }
     // add card to deck
 
