@@ -13,15 +13,14 @@ class Deck{
             })
             this.cards.push(new Card('🃏', 'J'));
         })
-
-    }
-
-    allcards(cards){
-        console.log(this.cards)
     }
 
     shuffle(cards){
         this.cards.sort(function() {return 0.5 - Math.random()});
+    }
+
+    allcards(cards){
+        console.log(this.cards)
     }
 
 }
