@@ -1,18 +1,26 @@
 class Deck{
     constructor(){
         this.cards = []
+        this.createDeck();
     }
 
     createDeck(deck){
         var suits = ['♣️', '🖤 ','♠️','♦️']
-        var nums = ['A',2,3,4,5,6,7,8,9,'J','Q','K']
-
+        var nums = ['A','2','3','4','5','6','7','8','9','J','Q','K']
+        suits.forEach((suit) => {
+            nums.forEach((num) => {
+                console.log("new card")
+                this.cards.push(new Card(suit, num));
+            })
+        })
         
     }
 
-    add(){
-
+    allcards(cards){
+        console.log(cards)
     }
+
+
     // add card to deck
 
     // shuffle
@@ -21,9 +29,8 @@ class Deck{
 
 }
 
-class Card extends Deck{
+class Card{
     constructor(suit,color){
-        super();
         this.suit = suit,
         this.color = color
     }
@@ -37,5 +44,5 @@ class BlackJack extends Deck{
 
 
 var deck = new Deck();
-console.log(deck.createDeck())
+console.log(deck.allcards())
 
