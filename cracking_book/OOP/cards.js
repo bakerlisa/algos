@@ -30,9 +30,19 @@ class Card{
 }
 
 class BlackJack extends Deck{
-    constructor(cards){
+    constructor(deck){
         super();
-        this.cards = cards
+        this.deck = deck
+    }
+
+    shuffle(deck){
+        
+    }
+}
+
+class Player{
+    constructor(name){
+        this.name = name
     }
 }
 
@@ -40,4 +50,11 @@ class BlackJack extends Deck{
 
 var deck = new Deck();
 console.log(deck.allcards())
+
+var game = new BlackJack(deck)
+console.log(game.allcards())
+
+var player1 = new Player("Lisa")
+// console.log(player1.name)
+
 
