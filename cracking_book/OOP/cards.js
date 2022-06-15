@@ -20,12 +20,16 @@ class Deck{
         console.log(this.cards)
     }
 
+    shuffle(cards){
+        this.cards.sort(function() {return 0.5 - Math.random()});
+    }
+
 }
 
 class Card{
-    constructor(suit,color){
+    constructor(suit,number){
         this.suit = suit,
-        this.color = color
+        this.number = number
     }
 }
 
@@ -35,9 +39,7 @@ class BlackJack extends Deck{
         this.deck = deck
     }
 
-    shuffle(deck){
-        
-    }
+   
 }
 
 class Player{
@@ -49,10 +51,11 @@ class Player{
 
 
 var deck = new Deck();
-console.log(deck.allcards())
+// console.log(deck.allcards())
 
-var game = new BlackJack(deck)
-console.log(game.allcards())
+var blackjack = new BlackJack(deck)
+blackjack.shuffle(deck)
+console.log(blackjack.allcards(deck))
 
 var player1 = new Player("Lisa")
 // console.log(player1.name)
