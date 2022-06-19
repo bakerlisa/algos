@@ -12,7 +12,7 @@ const beautifulDays = (i, j, k) => {
         }
     }
 
-    if( Math.abs((revi - j)) % k  === 0 ){
+    if( Math.abs((revi - i)) % k  === 0 ){
         total = Math.abs((revi - i)) / k
     }
     
@@ -21,8 +21,8 @@ const beautifulDays = (i, j, k) => {
             revj += j[m]; 
         }
     }
-    if((revj - j) % k  === 0 ){
-        total = k/revj
+    if( Math.abs((revj - j)) % k  === 0 ){
+        total = Math.abs((revi - j)) / k
     }
     return total;
 
