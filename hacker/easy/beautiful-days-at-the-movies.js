@@ -1,29 +1,22 @@
 const beautifulDays = (i, j, k) => {
     // Write your code here
-    i = i.toString();
-    j = j.toString();
+    var total = 0;
 
-    var revi = ""; 
-    var revj = "";
-    var total;
-    for(var l=i.length -1; l >= 0;l--){
-        if(i[l] != 0){
-            revi += i[l]; 
+    var counter = i;
+    while(counter <= j){
+        let countst = counter.toString();
+        let revNum = "";
+
+        for(var x=countst.length-1; x >= 0;x--){
+            revNum += countst[x]; 
+        } 
+
+        if(Number.isInteger(Math.abs((revNum - counter)) / k)  === true || (Math.abs((revNum - counter)) / k) === 0  ){
+            total++;
         }
+        counter++;
     }
 
-    if( Math.abs((revi - i)) % k  === 0 ){
-        total = Math.abs((revi - i)) / k
-    }
-    
-    for(var m=j.length -1; m >= 0;m--){
-        if(j[m] != 0){
-            revj += j[m]; 
-        }
-    }
-    if( Math.abs((revj - j)) % k  === 0 ){
-        total = Math.abs((revi - j)) / k
-    }
     return total;
 
 }
