@@ -18,8 +18,5 @@ while(true){
     }else{
         number+=20
     }
-    console.log(number)
 }
-
-// 232792560
-// 36251400
+console.log(number)
