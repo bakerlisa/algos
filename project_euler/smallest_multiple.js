@@ -4,26 +4,58 @@
 
 multiple = () => {
     var smallest = 2520;
-    var found = false;
+    smallest *= 20
+    smallest *= 19
+    smallest *= 18
+    smallest *= 17
+    smallest *= 16
+    smallest *= 15
+    smallest *= 14
+    smallest *= 13
+    smallest *= 12
+    smallest *= 11
+    // smallest *= 10
+    // smallest *= 9
+    // smallest *= 8
+    // smallest *= 7
+    // smallest *= 6
+    // smallest *= 5
+    // smallest *= 4
+    // smallest *= 3
+    // smallest *= 2
+    // smallest *= 1
 
-    while(!found){
-        for(var i=0;i =>11 && i <= 20;i++){
-            var div = smallest / i;
-            var result = (div - Math.floor(div)) !== 0; 
-            var isDividable = true;
 
-            if(result){
-                isDividable = false;
-                smallest+=2520;
-                console.log(smallest);
-                break;
-            }
-        }
-        if (isDividable) {
-            found = true;
-        }
-    }
+    console.log(smallest /= 20)
+    console.log(smallest /= 19)
+    console.log(smallest /= 18)
+    console.log(smallest /= 17)
+    console.log(smallest /= 16)
+    console.log(smallest /= 15)
+    console.log(smallest /= 14)
+    console.log(smallest /= 13)
+    console.log(smallest /= 12)
+    console.log(smallest /= 11)
+    console.log(smallest /= 10)
+    console.log(smallest /= 9)
+    console.log(smallest /= 8)
+    console.log(smallest /= 7)
+    console.log(smallest /= 6)
+    console.log(smallest /= 5)
+    console.log(smallest /= 4)
+    console.log(smallest /= 3)
+    console.log(smallest /= 2)
+
+    // 11,12,13,14,15,16,17,18,19,20
+    // for(var i =20; i>=1;i--){
+    //     var result = (smallest / i) !== 0; 
+    //     if(result){
+    //         smallest /= i;
+    //     }else{
+    //         return false;
+    //     }
+    // }
 
     console.log(smallest);
 }
-multiple();
+console.log(multiple());
