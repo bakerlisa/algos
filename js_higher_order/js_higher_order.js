@@ -2,7 +2,7 @@ const companies = [
     {name: "Company One", category: "Finance", start: 1982, end: 2003},
     {name: "Company Two", category: "Retail", start: 1992, end: 2008} ,
     {name: "Company Three", category: "Auto", start: 1999, end: 2007},
-    {name: "Company Four", category: "Retial", start: 1989, end: 2010},
+    {name: "Company Four", category: "Retail", start: 1989, end: 2010},
     {name: "Company Five", category: "Technology", start: 2009, end: 2014},
     {name: "Company Six", category: "Finance", start: 1987, end: 2010},
     {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
@@ -41,5 +41,15 @@ const drinkUp = ages.filter(function(age){
 
 const drinkers = ages.filter(age => age >=21)
 console.log(drinkers)
+
+const retail = companies.filter(function(company){
+    if(company.category === 'Retail'){
+        return true
+    }
+})
+// console.log(retail)
+
+const retailers = companies.filter(company => company.category === 'Retail')
+console.log(retailers)
 
 //
