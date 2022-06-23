@@ -119,3 +119,10 @@ const combined = ages
     .sort((a,b) => a-b)
     .reduce((total,age) => total + age, 0);
 console.log(combined)
+
+
+
+
+// Resources:
+// 1. https://www.youtube.com/watch?v=rRgD1yVwIvE
+// 2. 
