@@ -40,7 +40,7 @@ const drinkUp = ages.filter(function(age){
 // console.log(drinkUp)
 
 const drinkers = ages.filter(age => age >=21)
-console.log(drinkers)
+// console.log(drinkers)
 
 const retail = companies.filter(function(company){
     if(company.category === 'Retail'){
@@ -50,6 +50,11 @@ const retail = companies.filter(function(company){
 // console.log(retail)
 
 const retailers = companies.filter(company => company.category === 'Retail')
-console.log(retailers)
+// console.log(retailers)
 
+const eighties = companies.filter(start => (start.start >= 1980 && start.start <= 1990))
+// console.log(eighties)
+
+const topTen = companies.filter(ten => (ten.end - ten.start) >= 10)
+console.log(topTen)
 //
