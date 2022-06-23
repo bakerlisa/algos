@@ -110,5 +110,12 @@ const totalYears = companies.reduce(function(total,company){
 },0)
 
 const totalYear = companies.reduce((total,company) => total + (company.end - company.start), 0)
+// console.log(totalYear)
 
-console.log(totalYear)
+// ============================ COMBINING METHODS
+const combined = ages
+    .map((age) => age * 2)
+    .filter(age => age >= 40)
+    .sort((a,b) => a-b)
+    .reduce((total,age) => total + age, 0);
+console.log(combined)
