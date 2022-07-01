@@ -19,3 +19,15 @@ console.log(number);
 
 // BUT if we do a block (if, loops) we can still access those var outside of that block scope -< due to hoisting
 
+// var has a flaw - inblock scoping is still acts like a global varibale because of hositing. Let fixes that and makes it scoped only in the block its decalred in
+if(1 == 1){
+    const a = 0;
+}
+
+const A = 0
+A = 10
+console.log(A)
+
+
+// const is the same as let - the onyl difference is you can't change it
+    // needs to be in ALL CAPS
